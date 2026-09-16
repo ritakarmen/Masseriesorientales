@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { gallery } from '../data/series.js';
+---
+<Layout title="Galería | Masseries Orientales" description="Postales, escenarios y detalles de nuestras series orientales favoritas.">
+  <section class="gallery-intro"><p class="eyebrow">ARCHIVO VISUAL / 2024</p><h1>Mirar también<br /><em>es recordar.</em></h1><p>Una colección de lugares, gestos y pequeños detalles que hacen habitable cada historia.</p></section>
+  <section class="gallery-grid" aria-label="Galería de imágenes">
+    {gallery.map((item, index) => <figure class:list-tall={index === 1 || index === 4}><img src={item.image} alt={item.title} loading={index < 2 ? 'eager' : 'lazy'} /><figcaption><span>{item.type}</span><strong>{item.title}</strong></figcaption></figure>)}
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro, .gallery-grid { max-width: 1180px; margin-inline: auto; padding-inline: 5vw; }.gallery-intro { padding-top: 88px; padding-bottom: 70px; display: grid; grid-template-columns: 1fr 280px; column-gap: 100px; align-items: end; }.eyebrow { grid-column: 1 / -1; color: var(--coral); font: 500 10px 'DM Mono', monospace; letter-spacing: .08em; margin: 0 0 25px; }.gallery-intro h1 { margin: 0; font-size: clamp(55px, 8vw, 100px); line-height: .9; letter-spacing: -.075em; }.gallery-intro h1 em { color: var(--coral); font-family: 'Playfair Display', serif; }.gallery-intro > p:last-child { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 0; }.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 270px; gap: 18px; }.gallery-grid figure { position: relative; margin: 0; overflow: hidden; background: var(--ink); }.gallery-grid figure.list-tall { grid-row: span 2; }.gallery-grid img { width: 100%; height: 100%; object-fit: cover; opacity: .92; transition: transform .4s, opacity .4s; }.gallery-grid figure:hover img { transform: scale(1.04); opacity: .72; }.gallery-grid figcaption { position: absolute; bottom: 0; left: 0; right: 0; padding: 36px 18px 18px; color: white; background: linear-gradient(transparent, rgba(0,0,0,.75)); display: flex; flex-direction: column; gap: 5px; }.gallery-grid figcaption span { font: 9px 'DM Mono', monospace; color: var(--sun); text-transform: uppercase; }.gallery-grid figcaption strong { font-size: 17px; letter-spacing: -.04em; }.gallery-grid figure:nth-child(3) { background: var(--sun); }.gallery-grid figure:nth-child(3) img { mix-blend-mode: multiply; opacity: .8; }
+  @media (max-width: 700px) { .gallery-intro { padding-top: 62px; padding-bottom: 45px; display: block; }.gallery-intro h1 { margin-bottom: 28px; }.gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 220px; gap: 12px; }.gallery-grid figure.list-tall { grid-row: span 2; } }
+  @media (max-width: 430px) { .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 270px; }.gallery-grid figure.list-tall { grid-row: span 1; } }
+</style>
