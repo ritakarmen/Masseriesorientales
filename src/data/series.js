@@ -4,7 +4,7 @@ export const stories = [
     excerpt: 'Our Unwritten Seoul se mueve entre dos hermanas y dos ciudades para hablar de identidad sin levantar la voz.',
     category: 'K-DRAMA',
     date: '12 JUN 2024',
-    image: 'https://images.unsplash.com/photo-1538485399081-7c89732e5b1b?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=85',
     className: 'story-featured'
   },
   {
@@ -31,7 +31,7 @@ export const stories = [
 ];
 
 export const gallery = [
-  { title: 'Seúl al anochecer', type: 'Locaciones', image: 'https://images.unsplash.com/photo-1538485399081-7c89732e5b1b?auto=format&fit=crop&w=1000&q=85' },
+  { title: 'Seúl al anochecer', type: 'Locaciones', image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1000&q=85' },
   { title: 'Una casa junto al mar', type: 'Escenarios', image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=85' },
   { title: 'La mesa está servida', type: 'Detalles', image: 'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85' },
   { title: 'Luces de neón', type: 'Momentos', image: 'https://images.unsplash.com/photo-1578632292335-df3abbb0d586?auto=format&fit=crop&w=1000&q=85' },
